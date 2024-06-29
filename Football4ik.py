@@ -329,6 +329,9 @@ if __name__ == '__main__':
         if main_menu.is_enabled():
             main_menu.update(events)
             main_menu.draw(window)
-            pygame.mixer.music.unpause()  
+            if music_playing:
+                pygame.mixer.music.unpause()
+            else:
+                pygame.mixer.music.pause()
 
         pygame.display.update()
